@@ -1,0 +1,117 @@
+{{> partials/menu}}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="col-sm-12">
+        <h2>{{ @root.__ "Create Order" }} <span class="float-right"><button id="orderCreate" class="btn btn-outline-success float-right">{{ @root.__ "Crear Pedido" }}</button></span></h2>
+    </div>
+    <div class="order-layout col-md-12">
+        <div class="row">
+            <div class="col-5">
+                <form id="createOrderForm">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Estado del pedido</label>
+                            <select class="form-control" id="orderStatus">
+                                <option value="Completed">{{ @root.__ "Completed" }}</option>
+                                <option value="Paid">{{ @root.__ "Paid" }}</option>
+                                <option selected value="Pending">{{ @root.__ "Pending" }}</option>
+                                <option value="Cancelled">{{ @root.__ "Cancelled" }}</option>
+                                <option value="Declined">{{ @root.__ "Declined" }}</option>
+                                <option value="Shipped">{{ @root.__ "Shipped" }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Correo Electronico del cliente</label>
+                            <div class="input-group">
+                                <input type="email" class="form-control" id="customerEmail" aria-describedby="emailHelp" placeholder="Correo Electronico del cliente">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-success" id="lookupCustomer" type="button">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="control-label">{{ @root.__ "Nombre" }} *</label>
+                            <input type="text" class="form-control" name="First name" id="orderFirstName" value="{{session.customerFirstname}}" placeholder="First name" required>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="control-label">{{ @root.__ "Apellido" }} *</label>
+                            <input type="text" class="form-control" name="Last name" id="orderLastName" value="{{session.customerLastname}}" placeholder="Last name" required>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="control-label">{{ @root.__ "Nombre del negocio" }}</label>   
+                            <input type="text" class="form-control" name="Company name" id="orderCompany" value="{{session.customerCompany}}" placeholder="Company name">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="control-label">{{ @root.__ "Dirección" }} *</label>   
+                            <input type="text" class="form-control" name="Address 1" id="orderAddress1" value="{{session.customerAddress1}}" placeholder="Address line 1" required>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="control-label">{{ @root.__ "Dirección 2" }}</label>
+                            <input type="text" class="form-control" name="Address 2" id="orderAddress2" value="{{session.customerAddress2}}" placeholder="Address line 2">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="control-label">{{ @root.__ "País" }} *</label>
+                            <select class="form-control" id="orderCountry" name="orderCountry" required>
+                                <option value="" disabled selected>Select Country</option>
+                                {{#each countryList}}
+                                <option {{selectState this @root.session.customerCountry}} value="{{this}}">{{this}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="control-label">{{ @root.__ "State" }} *</label>
+                            <input type="text" class="form-control" name="orderState" id="orderState" value="{{session.customerState}}" placeholder="State" required>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="control-label">{{ @root.__ "Codigo Postál" }} *</label>
+                            <input type="text" class="form-control" name="Postcode" id="orderPostcode" value="{{session.customerPostcode}}" placeholder="Postcode" required>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="control-label">{{ @root.__ "Teléfono" }} *</label>
+                            <input type="text" class="form-control" name="Teléfono" id="orderPhone" value="{{session.customerPhone}}" placeholder="Phone number" required>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="control-label">{{ @root.__ "Comentarios" }}</label>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Order comment" id="orderComment" name="orderComment">{{session.orderComment}}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <div class="col-7">
+                {{#if session.cart}}
+                    {{> (getTheme 'cart')}}
+                {{else}}
+                <div class="alert alert-warning" role="alert">
+                    <h5 class="text-center">La compra esta vacio.</h5><hr>
+                    <h6 class="text-center">Añadir algunos productos<a target="_blank" href="/">aquí,</a> luego regresa para completar el pedido.</h6>
+                </div>
+                {{/if}}
+            </div> 
+        </div>
+    </div>
+</main>

@@ -1,0 +1,12 @@
+{
+    "description": "Card payment",
+    "secretKey": "sk_test_51MN6LfJuq8G5bAaHn1l7G5XWKXwJ6MBlgYUpx3efQGtZJ1WgffJtshf5QTrgeazVehdbzcbckozS6Bel3C7vQxmQ00sND1Tumm",
+    "publicKey": "pk_test_51MN6LfJuq8G5bAaHm0JxZqvDbf8QAVfCIpbALfmfV3p3hlG8I9EOA4Jc5uIagV7GN2dxKQCrVjssN7IrnxXSiTcy00b000V4rC",
+    "stripeCurrency": "usd",
+    "stripeDescription": "expressCart payment",
+    "stripeLogoURL": "http://localhost:1111/images/stripelogo.jpg",
+    "stripeWebhookSecret": "",
+    "paymentMethods": [
+        "card"
+    ]
+}

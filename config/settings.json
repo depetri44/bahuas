@@ -1,0 +1,55 @@
+{
+    "cartTitle": "Bahia Indumentaria",
+    "cartDescription": "Bahia Indumentaria",
+    "cartLogo": "",
+    "baseUrl": "http://localhost:1111",
+    "emailHost": "smtp.gmail.com",
+    "emailPort": 587,
+    "emailSecure": false,
+    "emailUser": "contactobahiaind@gmail.com",
+    "emailPassword": "Bahia123.,",
+    "emailAddress": "contactobahiaind@gmail.com",
+    "productsPerRow": 4,
+    "productsPerPage": 8,
+    "footerHtml": "&lt;h6 class=&quot;text-center&quot;&gt;Desarrollado por Nicol&aacute;s Depetri &lt;/h6&gt;",
+    "googleAnalytics": "",
+    "injectJs": "",
+    "customCss": "",
+    "currencySymbol": "$",
+    "currencyISO": "USD",
+    "paymentGateway": [
+        "instore"
+    ],
+    "databaseConnectionString": "mongodb://127.0.0.1:27017/expresscart",
+    "theme": "Cloth",
+    "trackStock": false,
+    "orderHook": "",
+    "availableLanguages": [
+        "en",
+        "it"
+    ],
+    "defaultLocale": "it",
+    "maxQuantity": 25,
+    "twitterHandle": "",
+    "facebookAppId": "",
+    "productOrderBy": "date",
+    "productOrder": "descending",
+    "modules": {
+        "enabled": {
+            "shipping": "shipping-basic",
+            "discount": "discount-voucher",
+            "reviews": "reviews-basic"
+        },
+        "loaded": {
+            "shipping": {},
+            "discount": {},
+            "reviews": {}
+        }
+    },
+    "showRelatedProducts": true,
+    "showHomepageVariants": false,
+    "secretCookie": "69018685a6e586fd4741f98912bb9a7782345bf9",
+    "secretSession": "cd833ee6723f81e2130f3efa1c0a38afc7134537",
+    "themeViews": "../views/themes/Cloth/",
+    "env": ".min"
+}

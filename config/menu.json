@@ -1,0 +1,14 @@
+{
+    "items": [
+        {
+            "title": "Colegios",
+            "link": "Colegios",
+            "order": 0
+        },
+        {
+            "title": "Empresas",
+            "link": "Empresas",
+            "order": 1
+        }
+    ]
+}

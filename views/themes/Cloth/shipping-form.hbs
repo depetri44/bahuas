@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        <div class="form-group">
+            <input type="email" class="form-control customerDetails" id="shipEmail" name="shipEmail" minlength="5" placeholder="Correo Electronico" value="{{@root.session.customerEmail}}" required>
+            <div class="invalid-feedback">
+              Por favor, introduce una dirección de correo electrónico válida
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12">
+        <div class="form-group">
+            <input type="text" class="form-control customerDetails" id="shipCompany" name="shipCompany" placeholder="Empresa/Negocio" value="{{@root.session.customerCompany}}">
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <div class="form-group">
+            <input type="text" class="form-control customerDetails" id="shipFirstname" name="shipFirstname" placeholder="Nombre Completo" value="{{@root.session.customerFirstname}}" required>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <div class="form-group">
+            <input type="text" class="form-control customerDetails" id="shipLastname" name="shipLastname" placeholder="Apellido" value="{{@root.session.customerLastname}}" required>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12">
+        <div class="form-group">
+            <input type="text" class="form-control customerDetails" id="shipAddr1" name="shipAddr1" placeholder="Dirección  1" value="{{@root.session.customerAddress1}}" required>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12">
+        <div class="form-group">
+            <input type="text" class="form-control customerDetails" id="shipAddr2" name="shipAddr2" placeholder="Dirección 2 (Opcional)" value="{{@root.session.customerAddress2}}">
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12">
+        <div class="form-group">
+            <select class="form-control" id="shipCountry" name="shipCountry" required>
+                <option value="" disabled selected>Select Country</option>
+                {{#each countryList}}
+                <option {{selectState this @root.session.customerCountry}} value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <div class="form-group">
+            <input type="text" class="form-control customerDetails" id="shipState" name="shipState" placeholder="País" value="{{@root.session.customerState}}" required>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <div class="form-group">
+            <input type="text" class="form-control customerDetails" id="shipPostcode" name="shipPostcode" placeholder="Codigo Postal" value="{{@root.session.customerPostcode}}" required>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12">
+        <div class="form-group">
+            <input type="number" class="form-control customerDetails" id="shipPhoneNumber" name="shipPhoneNumber" placeholder="Número de teléfono" value="{{@root.session.customerPhone}}" required>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12">
+        <div class="form-group">
+            <textarea class="form-control customerDetails" placeholder="Comentarios" id="orderComment" name="orderComment">{{@root.session.orderComment}}</textarea>
+        </div>
+    </div>
+</div>

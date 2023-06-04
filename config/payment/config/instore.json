@@ -1,0 +1,6 @@
+{
+    "description": "Retirar en Fabrica",
+    "orderStatus": "Pending",
+    "buttonText": "Hacer pedido, pagar en tienda",
+    "resultMessage": "El pedido es lugar. Pague su pedido en la tienda al momento de la recogida."
+}
